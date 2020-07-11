@@ -1,10 +1,12 @@
 /*
  * Nombre del archivo:   main.c
- * Autor:
  *
  * Descripción: 
  *        Este programa es un ejemplo para practicar trabajo colaborativo
  *        usando git como herramienta de control de versiones.
+ * 
+ * Autores:
+ *        Nahuel Espinosa
  */
 
 #include <xc.h>
@@ -13,26 +15,9 @@
 /* ------------------------ Definiciones ------------------------------------ */
 #define _XTAL_FREQ  4000000L    // Frecuencia de operación del cristal
 
-/* ------------------------ Definición de salidas --------------------------- */
-#define PIN_LED1    PORTEbits.RE2
-#define TRIS_LED1   TRISEbits.TRISE2
-
-#define PIN_LED2    PORTEbits.RE1
-#define TRIS_LED2   TRISEbits.TRISE1
-
-#define PIN_LED3    PORTEbits.RE0
-#define TRIS_LED3   TRISEbits.TRISE0
-
-/* ------------------------ Definición de entradas -------------------------- */
-#define PIN_TEC1    PORTBbits.RB0
-#define TRIS_TEC1   TRISBbits.TRISB0
-
-#define PIN_TEC2    PORTBbits.RB1
-#define TRIS_TEC2   TRISBbits.TRISB1
-
 /* ------------------------ Bits de configuración --------------------------- */
 // CONFIG1
-#pragma config FOSC = XT           // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 //#pragma config FOSC = INTRC_NOCLKOUT // Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
@@ -49,30 +34,68 @@
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
 /* ------------------------ Prototipos de funciones ------------------------- */
-void gpio_config();
+void gpioConfig();
+
+// Funciones de UART
+void uartConfig();
+void uartWrite(uint8_t dato);
+void uartWriteString(uint8_t string[]);
+
+// TODO: Agregar prototipo de función que imprime tu nombre y apellido
+void printNahuelEspinosa();
 
 /* ------------------------ Implementación de funciones --------------------- */
 void main(void) {               // Función principal
-    gpio_config();              // Inicializo las entradas y salidas
+    gpioConfig();               // Inicializo las entradas y salidas
+    uartConfig();               // Inicializo el puerto serie
     
-    PIN_LED1 = 0;               // Apago el LED1
+    // TODO: Agregar el llamado a la función que imprime tu nombre y apellido
+    printNahuelEspinosa();
     
     while(1) {                  // Super loop
-        if( PIN_TEC1 == 0 ) {   // Espero que se presione la TEC1
-            PIN_LED1 = 1;       // Enciendo el LED1
-        }
-
         __delay_ms(10);
     }
     
     return;
 }
 
-void gpio_config() {
-    ANSEL = 0;                  // Configuro todas las entradas
-    ANSELH = 0;                 //   como digitales
+// Función que configura los pines como entradas o salidas según la necesidad
+void gpioConfig() {
+    ANSEL = 0;                  // Configuro todas las entradas como digitales
+    ANSELH = 0; 
+}
+
+// Función que configura la UART
+void uartConfig() {
+    TX9 = 0;                    // Transmisión de 8 bits
+    TXEN = 1;                   // Habilito la transmisión
+    SYNC = 0;                   // Modo asincrónico
     
-    TRIS_TEC1 = 1;              // Configuro la TEC1 como entrada
-    TRIS_LED1 = 0;              // Configuro el LED1 como salida
+    BRGH = 1;                   // Valor de tabla (9600 bps)
+    SPBRG = 25;                 // Valor de tabla (9600 bps)
+    RX9 = 0;                    // Recepció de 8 bits
+    
+    CREN = 1;                   // Habilito la recepción continua
+    SPEN = 1;                   // Habilito el puerto serie
+}
+
+// Función que transmite un byte por puerto serie
+void uartWrite(uint8_t dato) {
+    while(TXIF == 0);           // Espero que el transmisor esté libre
+    TXREG = dato;               // Transmito el byte
+}
+
+// Función que recibe una cadena de caracteres y los transmite uno por uno
+void uartWriteString(uint8_t string[]) {
+    uint8_t i;
+    
+    for( i = 0 ; string[i] != 0 ; i++ ) {   // Repito hasta que termine el string
+        uartWrite( string[i] );             // Transmito el caracter en la posición i
+    }
+}
+
+// TODO: Agregar implementación de función que imprime tu nombre y apellido
+void printNahuelEspinosa() {
+    uartWriteString("NahuelEspinosa\r\n");
 }
 /* ------------------------ Fin de archivo ---------------------------------- */
