@@ -3,8 +3,8 @@
  * Autor:
  *
  * Descripción: 
- *        Este programa espera que se presione una tecla y luego enciende
- *        un led.
+ *        Este programa es un ejemplo para practicar trabajo colaborativo
+ *        usando git como herramienta de control de versiones.
  */
 
 #include <xc.h>
@@ -66,10 +66,6 @@ void main(void) {               // Función principal
     }
     
     return;
-}
-
-void interrupt isr() {          // Rutina de atención de interrupciones
-
 }
 
 void gpio_config() {

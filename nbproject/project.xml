@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>pic_c</name>
+            <name>practica-git</name>
             <creation-uuid>bfe161e7-8e01-4e88-910f-e7b810c2e275</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
