@@ -48,7 +48,7 @@ Repositorio inicial para práctica de trabajo colaborativo con git, GitHub y MPL
 	}
 	```
 6. Compila el programa, ejecutalo y revisa que el mismo funcione correctamente.
-7. Confirma los cambios con un *commit* con el texto **"Se agregan la función con los datos de APELLIDO, Nombre"** en la descripción del mismo.
+7. Confirma los cambios con un *commit* con el texto **"Se agrega la función con los datos de APELLIDO, Nombre"** en la descripción del mismo.
 8. Cambia a la rama *master* y trae los cambios del servidor con un *pull*.
 9. Mezcla la rama *develop* en la rama *master*, resuelve los conflictos y confirma los cambios con un *commit* en la rama *master*.
 10. Envía los cambios efectuados en la rama *master* al servidor con un *push*.
