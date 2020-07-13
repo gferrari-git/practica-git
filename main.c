@@ -12,6 +12,7 @@
  *        Francisco Janza
  *        Matias Oliva
  *        Agustín Oliva
+ *        Sebastián Pérez
  */
 
 #include <xc.h>
