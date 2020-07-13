@@ -23,7 +23,7 @@
  *        Gastón Almela
  *		  pepe
  *        Otro nombre
- *		  Guille
+ *		  Guille Ferrari
  */
 
 #include <xc.h>
