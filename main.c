@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 /*
  * Nombre del archivo:   main.c
