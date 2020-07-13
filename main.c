@@ -1,3 +1,4 @@
+
 /*
  * Nombre del archivo:   main.c
  *
@@ -57,7 +58,9 @@ void uartWriteString(uint8_t string[]);
 
 // TODO: Agregar prototipo de función que imprime tu nombre y apellido
 void printNahuelEspinosa();
-void printMateoPerez();
+void printSantiagoOlgiati();
+void printJoseMorales();
+void printFranciscoJanza();
 
 /* ------------------------ Implementación de funciones --------------------- */
 void main(void) {               // Función principal
@@ -66,7 +69,9 @@ void main(void) {               // Función principal
     
     // TODO: Agregar el llamado a la función que imprime tu nombre y apellido
     printNahuelEspinosa();
-    printMateoPerez();
+    printSantiagoOlgiati();
+    printJoseMorales();
+    printFranciscoJanza();
     while(1) {                  // Super loop
         __delay_ms(10);
     }
@@ -113,7 +118,13 @@ void uartWriteString(uint8_t string[]) {
 void printNahuelEspinosa() {
     uartWriteString("NahuelEspinosa\r\n");
 }
-void printMateoPerez() {
-    uartWriteString("MateoPerez\r\n");
+void printSantiagoOlgiati() {
+    uartWriteString("Santiago Olgiati\r\n");
+}
+void printJoseMorales() {
+    uartWriteString("JoseMorales\r\n");
+}
+void printFranciscoJanza() {
+    uartWriteString("FranciscoJanza\r\n");
 }
 /* ------------------------ Fin de archivo ---------------------------------- */
