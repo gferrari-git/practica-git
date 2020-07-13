@@ -19,6 +19,7 @@
  *        Sebastián Pérez
  *        Santiago Olgiati
  *        Mateo Pérez de Gracia
+ *        Miqueas Lovecchio
  */
 
 #include <xc.h>
