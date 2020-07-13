@@ -7,8 +7,13 @@
  * 
  * Autores:
  *        Nahuel Espinosa
+ *        José Morales
+ *        Lucas Vaccaro
  *        Francisco Janza
  *        Candela Silva Diniz
+ *        Matias Oliva
+ *        Agustín Oliva
+ *        Sebastián Pérez
  */
 
 #include <xc.h>
@@ -100,4 +105,3 @@ void uartWriteString(uint8_t string[]) {
 void printNahuelEspinosa() {
     uartWriteString("NahuelEspinosa\r\n");
 }
-/* ------------------------ Fin de archivo ---------------------------------- */
