@@ -56,6 +56,7 @@ void uartWriteString(uint8_t string[]);
 
 // TODO: Agregar prototipo de función que imprime tu nombre y apellido
 void printNahuelEspinosa();
+void printJoseMorales();
 
 /* ------------------------ Implementación de funciones --------------------- */
 void main(void) {               // Función principal
@@ -64,6 +65,7 @@ void main(void) {               // Función principal
     
     // TODO: Agregar el llamado a la función que imprime tu nombre y apellido
     printNahuelEspinosa();
+    printJoseMorales();
     
     while(1) {                  // Super loop
         __delay_ms(10);
@@ -110,5 +112,9 @@ void uartWriteString(uint8_t string[]) {
 // TODO: Agregar implementación de función que imprime tu nombre y apellido
 void printNahuelEspinosa() {
     uartWriteString("NahuelEspinosa\r\n");
+}
+
+void printJoseMorales() {
+    uartWriteString("JoseMorales\r\n");
 }
 /* ------------------------ Fin de archivo ---------------------------------- */
