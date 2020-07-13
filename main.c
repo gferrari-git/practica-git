@@ -7,6 +7,7 @@
  * 
  * Autores:
  *        Nahuel Espinosa
+ *        José Morales
  */
 
 #include <xc.h>
