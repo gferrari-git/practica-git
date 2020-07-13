@@ -20,6 +20,7 @@
  *        Santiago Olgiati
  *        Mateo Pérez de Gracia
  *        Miqueas Lovecchio
+ *        Gastón Almela
  */
 
 #include <xc.h>
