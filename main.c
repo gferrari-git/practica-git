@@ -7,6 +7,7 @@
  * 
  * Autores:
  *        Nahuel Espinosa
+ *        Francisco Janza
  *        Guido Navia
  */
 
