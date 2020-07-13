@@ -7,7 +7,7 @@
  * 
  * Autores:
  *        Nahuel Espinosa
- *        Miqueas Lovecchio
+ *        Francisco Janza
  */
 
 #include <xc.h>
