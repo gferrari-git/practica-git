@@ -61,6 +61,7 @@ void printSantiagoOlgiati();
 void printJoseMorales();
 void printFranciscoJanza();
 void printLucasVaccaro();
+void printMateoPerez();
 
 /* ------------------------ Implementación de funciones --------------------- */
 void main(void) {               // Función principal
@@ -73,25 +74,6 @@ void main(void) {               // Función principal
     printJoseMorales();
     printFranciscoJanza();
     printLucasVaccaro();
-    while(1) {                  // Super loop
-        __delay_ms(10);
-    }
-    
-    return;
-void printFranciscoJanza();
-void printJoseMorales();
-void printLucasVaccaro();
-void printMateoPerez();
-/* ------------------------ Implementación de funciones --------------------- */
-void main(void) {               // Función principal
-    gpioConfig();               // Inicializo las entradas y salidas
-    uartConfig();               // Inicializo el puerto serie
-    
-    // TODO: Agregar el llamado a la función que imprime tu nombre y apellido
-    printNahuelEspinosa();
-    printJoseMorales();
-    printLucasVaccaro();
-    printFranciscoJanza();
     printMateoPerez();
     while(1) {                  // Super loop
         __delay_ms(10);
@@ -134,46 +116,6 @@ void uartWriteString(uint8_t string[]) {
         uartWrite( string[i] );             // Transmito el caracter en la posición i
     }
 }
-
-// TODO: Agregar implementación de función que imprime tu nombre y apellido
-void printNahuelEspinosa() {
-    uartWriteString("NahuelEspinosa\r\n");
-}
-void printFranciscoJanza() {
-    uartWriteString("FranciscoJanza\r\n");
-}
-/* ------------------------ Fin de archivo ---------------------------------- */
-
-void printJoseMorales() {
-    uartWriteString("JoseMorales\r\n");
-}
-/* ------------------------ Fin de archivo ---------------------------------- */
-
-void printLucasVaccaro() {
-    uartWriteString("LucasVaccaro\r\n");
-}
-
-void printMateoPerez() {
-    uartWriteString("LucasVaccaro\r\n");
-}
-
-
-
-// Función que transmite un byte por puerto serie
-void uartWrite(uint8_t dato) {
-    while(TXIF == 0);           // Espero que el transmisor esté libre
-    TXREG = dato;               // Transmito el byte
-}
-
-// Función que recibe una cadena de caracteres y los transmite uno por uno
-void uartWriteString(uint8_t string[]) {
-    uint8_t i;
-    
-    for( i = 0 ; string[i] != 0 ; i++ ) {   // Repito hasta que termine el string
-        uartWrite( string[i] );             // Transmito el caracter en la posición i
-    }
-}
-
 // TODO: Agregar implementación de función que imprime tu nombre y apellido
 void printNahuelEspinosa() {
     uartWriteString("NahuelEspinosa\r\n");
@@ -189,6 +131,9 @@ void printFranciscoJanza() {
 }
 void printLucasVaccaro() {
     uartWriteString("LucasVaccaro\r\n");
+}
+void printMateoPerez() {
+    uartWriteString("Mateo Perez\r\n");
 }
 
 /* ------------------------ Fin de archivo ---------------------------------- */
