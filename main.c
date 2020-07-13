@@ -8,6 +8,7 @@
  * Autores:
  *        Nahuel Espinosa
  *        Lucas Vaccaro
+ *        Francisco Janza
  */
 
 #include <xc.h>
