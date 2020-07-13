@@ -7,8 +7,9 @@
  * 
  * Autores:
  *        Nahuel Espinosa
- *        José Morales
+ *        Lucas Vaccaro
  *        Francisco Janza
+ *        Matias Oliva
  */
 
 #include <xc.h>
