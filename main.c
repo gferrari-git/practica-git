@@ -25,7 +25,7 @@
  *        Otro nombre
  *		  Guille Ferrari
  *        Aqui va otro nombre
- *        Otro cambio
+ *        Otro cambio de Nahue
  */
 
 #include <xc.h>
