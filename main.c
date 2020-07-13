@@ -8,6 +8,10 @@
  * Autores:
  *        Nahuel Espinosa
  *        Francisco Janza
+ *        Agustín Oliva
+ *        Lucas Vaccaro
+ *        Francisco Janza
+ *        Matias Oliva
  *        Guido Navia
  */
 
