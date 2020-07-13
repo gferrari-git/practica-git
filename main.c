@@ -22,6 +22,7 @@
  *        Miqueas Lovecchio
  *        Gastón Almela
  *		  pepe
+ *        Otro nombre
  */
 
 #include <xc.h>
