@@ -1,4 +1,3 @@
-
 /*
  * Nombre del archivo:   main.c
  *
@@ -58,10 +57,9 @@ void uartWriteString(uint8_t string[]);
 
 // TODO: Agregar prototipo de función que imprime tu nombre y apellido
 void printNahuelEspinosa();
-void printSantiagoOlgiati();
-void printJoseMorales();
 void printFranciscoJanza();
-
+void printJoseMorales();
+void printLucasVaccaro();
 /* ------------------------ Implementación de funciones --------------------- */
 void main(void) {               // Función principal
     gpioConfig();               // Inicializo las entradas y salidas
@@ -69,9 +67,10 @@ void main(void) {               // Función principal
     
     // TODO: Agregar el llamado a la función que imprime tu nombre y apellido
     printNahuelEspinosa();
-    printSantiagoOlgiati();
     printJoseMorales();
+    printLucasVaccaro();
     printFranciscoJanza();
+    
     while(1) {                  // Super loop
         __delay_ms(10);
     }
@@ -118,13 +117,19 @@ void uartWriteString(uint8_t string[]) {
 void printNahuelEspinosa() {
     uartWriteString("NahuelEspinosa\r\n");
 }
-void printSantiagoOlgiati() {
-    uartWriteString("Santiago Olgiati\r\n");
-}
-void printJoseMorales() {
-    uartWriteString("JoseMorales\r\n");
-}
 void printFranciscoJanza() {
     uartWriteString("FranciscoJanza\r\n");
 }
 /* ------------------------ Fin de archivo ---------------------------------- */
+
+void printJoseMorales() {
+    uartWriteString("JoseMorales\r\n");
+}
+/* ------------------------ Fin de archivo ---------------------------------- */
+
+void printLucasVaccaro() {
+    uartWriteString("LucasVaccaro\r\n");
+}
+
+
+
